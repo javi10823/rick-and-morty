@@ -1,7 +1,8 @@
 import React from 'react';
 import {StyleSheet, Text, TouchableOpacity} from 'react-native';
+import theme from '../../config/theme';
 
-export const Button = ({text, textStyles, ...props}) => (
+const Button = ({text, textStyles, ...props}) => (
   <TouchableOpacity {...props} style={[styles.buttonContainer, props.style]}>
     <Text style={[styles.text, textStyles]}>{text}</Text>
   </TouchableOpacity>
@@ -9,12 +10,14 @@ export const Button = ({text, textStyles, ...props}) => (
 
 const styles = StyleSheet.create({
   buttonContainer: {
-    backgroundColor: '#888',
+    backgroundColor: theme.color.gray,
     width: '100%',
     paddingVertical: 8,
   },
   text: {
-    color: '#FFF',
+    color: theme.color.white,
     textAlign: 'center',
   },
 });
+
+export default Button;
